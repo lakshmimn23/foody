@@ -1,0 +1,492 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+:root { 
+    --primary : #16a083;
+    --white: #fff;
+    --hover: #119764;
+    --dark: #222;
+    --bg-light : #f5f5f5;
+    --unchecked : #aaa;
+    --danger : #cc1717;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: "Roboto", sans-serif;
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    padding: 1rem 1.6rem;
+    text-decoration: none;
+    font-weight: small;
+    outline: none;
+    margin-top: 1rem;
+    text-transform: uppercase;
+    border-radius: 50px;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--hover);
+    transition: all 0.3s ease-in-out;
+}
+
+/* navbar style */
+.navbar input[type="checkbox"],
+.nabar .hamburger-lines {
+    display: none;
+}
+
+.navbar {
+    position: fixed;
+    top:0;
+    width: 100%;
+    background-color: var(--white);
+    color: var(--dark);
+    z-index: 999;
+    height: 50px;
+    opacity: 1;
+    box-shadow: 0px 5px 10px 0px var(--white);
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+
+.menu-items {
+    order: 2;
+    display: flex;
+    align-items: center;
+}
+
+.menu-items li {
+    list-style: none;
+    margin-left: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.menu-items a {
+    text-decoration: none;
+    color: var(--dark);
+    font-weight: 400;
+    transition: color 0.3s ease-in-out;
+}
+
+.menu-items a:hover {
+    color: var(--hover);
+}
+
+.container .logo {
+    position: absolute;
+}
+
+.logo {
+    order: 1;
+    font-size: 2.2rem;
+    color: var(--primary);
+}
+
+/* showcase */
+
+.showcase-area {
+    height: 100vh;
+    background: linear-gradient(
+        rgba(240, 240, 240, 0.14),
+        rgba(255, 255, 255, 0.336)
+    ) ,
+    url('https://i.postimg.cc/wT3TQS3V/header-image2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.showcase-area .showcase-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    flex-direction: column;
+    font-size: 1.6rem;
+    gap: 10px;
+    line-height: 1.1rem;
+}
+
+.showcase-container .main-title{
+    font-size: 4rem;
+    color: var(--primary);
+}
+
+/* about  */
+
+#about {
+    background-color: var(--white);
+    padding: 50px 0;
+}
+
+.about-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#about h2 {
+    font-size: 2.3rem;
+    color: var(--primary);
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: var(--dark);
+}
+
+#about .small {
+    font-size: 1.2rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.about-text {
+    flex: 1 1 400px;
+    padding: 30px;
+    margin: auto;
+    transform: translate(-150px);
+    animation: about-text 1s ease-in-out forwards;
+}
+
+@keyframes about-text {
+    100% {
+        transform: translate(0);
+    }
+}
+
+.about-img {
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translateX(150%);
+    animation: about-img-animation 1s ease-in-out forwards;
+}
+
+@keyframes about-img-animation {
+    100% {
+        transform: translate(0);
+    }
+}
+
+.about-img img {
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: right;
+    border-radius: 5px;
+}
+
+/* food section */
+#food {
+    padding: 5rem 0 10rem 0;
+}
+
+#food h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 40px;
+    color: var(--dark);
+    text-transform: uppercase;
+}
+
+.food-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-container img {
+    display: block;
+    width: 100%;
+    margin: auto;
+    max-height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-container {
+    margin: 0 1rem;
+    position: relative;
+}
+
+.img-content {
+    position: absolute;
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+}
+
+.img-container h3 {
+    color: var(--white);
+    font-size: 2.2rem;
+}
+
+.img-content a {
+    font-size: 1.02rem;
+}
+
+.img-container::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7) !important;
+    opacity: 0;
+    z-index: 1;
+    transform: scaleY(0);
+    transform-origin: 100% 100%;
+    transition: all 0.3s ease-in-out;
+}
+
+.img-container:hover::after{
+    transform: scaleY(1);
+    opacity: 1;
+}
+
+.img-container:hover .img-content {
+    opacity: 1;
+    top: 40%;
+    
+}
+
+/* end of food */
+/*  food menu */
+
+#food-menu {
+    padding: 5rem 0;
+    background: var(--bg-light);
+}
+
+.food-menu-heading {
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--primary);
+}
+
+.food-menu-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 50px 0px 30px 0px;
+}
+
+.food-menu-container img {
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.food-menu-item {
+    display: flex;
+    flex: 1 1 800px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem ;
+}
+
+.food-description{
+    margin: auto 1.5rem;
+}
+
+.food-title {
+    font-size: 2rem;
+    color: var(--primary);
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.food-description p {
+    font-size: 1.4rem;
+    color: var(--dark);
+    font-weight: 600;
+}
+
+.food-description .food-price {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+/* testimonial */
+#testimonials {
+    padding: 5rem 0;
+}
+
+.testimonial-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: var(--primary);
+    font-weight: 400;
+
+}
+
+.testimonial-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    padding: 1rem;
+}
+
+.customer-photo img {
+    display: block;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+    border-right: 5px solid var(--primary);
+}
+
+.testimonial-box {
+    text-align: center;
+    padding: 1rem;
+}
+
+.testimonial-box .checked {
+    color: var(--primary);
+} 
+
+.testimonial-box .unchecked {
+    color: var(--unchecked);
+} 
+
+.testimonial-box .testimonial-text {
+    margin: 1rem 0;
+    padding: 1rem;
+}
+
+/* conatct */
+#contact {
+    background-color: var(--bg-light);
+    padding: 5rem 0;
+}
+
+.contact-title {
+    text-align: center;
+    color: var(--primary);
+    font-size: 2.8rem;
+    font-weight: 400;
+}
+
+.contact-container {
+    display: flex;
+    gap: 20px;
+}
+
+.contact-img {
+    width: 50%;
+}
+
+.contact-img img {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+}
+
+.form-container {
+    padding: 1rem;
+    width: 50%;
+    margin: auto;
+}
+
+.form-container .input-item{
+    display: block;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 1rem 0;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    text-indent: 10px;
+    margin-top: 0.5rem;
+    color: var(--primary);
+    font-weight: 400;
+}
+
+.form-container fieldset {
+    border: none;
+    border-top: 3px solid var(--primary);
+}
+.form-container legend {
+    text-align: center;
+    color: var(--primary);
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.form-container .form-item {
+    margin-top: 20px;
+}
+
+.form-container .form-item button{
+    padding: 0.8rem 0.9rem;
+    width: 10rem;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}   
+
+.form-container .form-item .btn-danger {
+    background-color: var(--danger);
+    color: var(--white);
+}
+
+/* footer */
+#footer {
+    padding: 2rem 0;
+
+}
+#footer .footer-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-container .footer-txt{
+    font-size: 1.1rem;
+    color: var(--dark);
+}
+
+.footer-txt strong {
+    color: var(--primary);
+}

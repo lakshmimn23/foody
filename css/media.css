@@ -1,0 +1,140 @@
+@media screen and (max-width:996px) {
+    .navbar .navbar-container input[type="checkbox"],
+    .navbar-container .hamberger-lines {
+        display: block;
+    }
+
+    .navbar-container {
+        display: block;
+        position: relative;
+        height: 64px;
+    }
+
+    .navbar .menu-items {
+        display: flex;
+        flex-direction: column;
+        background-color: var(--white);
+        height: 100vh;
+        max-width: 300px;
+        gap: 10px;
+        align-items: center;
+        text-align: center;
+        margin-left: -50px; 
+        padding-left: 10px;   
+        padding-top: 50px;
+        transform: translateX(-100%);
+    }
+
+    .navbar-container input[type="checkbox"] {
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 32px;
+        width: 30px;
+        z-index: 5;
+        opacity: 0;
+    }
+
+    .navbar-container .hamberger-lines {
+        z-index: 2;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        position: absolute;
+        top: 0;
+        right: 0;
+        height: 23px;
+        width: 35px;
+    }
+
+    .hamberger-lines .line {
+        background-color: var(--dark);
+        display: block;
+        height: 4px;
+        width: 100%;
+        border-radius: 10px;
+    }
+
+    .hamberger-lines .line-1 {
+        transform-origin: 0% 0%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .hamberger-lines .line-2 {
+        transition: transform 0.2s ease-in-out;
+    }
+    .hamberger-lines .line-3 {
+        transform-origin: 0% 100%;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .navbar-container input[type="checkbox"]:checked ~ .menu-items {
+        transform: translateX(0);
+    }
+    /* hamberger menu line actions */
+    .navbar-container input[type="checkbox"]:checked ~ .hamberger-lines .line-1 {
+        transform: rotate(35deg);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamberger-lines .line-2 {
+        transform: scaleY(0);
+    }
+    .navbar-container input[type="checkbox"]:checked ~ .hamberger-lines .line-3 {
+        transform: rotate(-35deg);
+    }
+
+    .logo {
+        position: absolute;
+        top: -2.5rem;
+        left: 0;
+    }
+
+    
+    /* food container */
+
+    .food-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .food-menu-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .food-description {
+        text-align: center;
+    }
+
+    .testimonial-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .contact-img, .form-container {
+        width: 100%;
+    }
+}
+
+@media screen and (min-width:320px) and (max-width:526px) {
+    .showcase-area .showcase-container  {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.1rem;
+    }    
+
+    .showcase-container .main-title {
+        font-size: 2rem;
+    }
+
+
+}
